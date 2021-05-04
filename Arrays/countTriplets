@@ -1,0 +1,16 @@
+int countTriplet(int arr[], int n) {
+        HashSet<Integer> arrayElements=new HashSet<Integer>();
+        int count=0;
+        for(int i=0;i<n;i++){
+            arrayElements.add(arr[i]);
+        }
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+                if(arrayElements.contains(arr[i]+arr[j])){
+                    count++;
+                    
+                }
+            }
+        }
+        return count;
+    }
