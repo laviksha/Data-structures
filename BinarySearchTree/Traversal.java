@@ -27,20 +27,9 @@ public class TreeTraversal {
 		ts.insert(60);
 		ts.insert(80);
 		ts.inorder();
+		ts.preOrder();
+		ts.postOrder();
 
-	}
-	private void inorder() {
-		//Left root right
-		inorderRec(root);
-		
-	}
-	private void inorderRec(Node root) {
-		if(root!= null)
-		{
-		inorderRec(root.left);
-		System.out.println(root.data);
-		inorderRec(root.right);
-		}
 	}
 	
 	private  void insert(int i) {
@@ -61,7 +50,48 @@ public class TreeTraversal {
 		return root;
 		
 	}
+	private void inorder() {
+		//Left root right
+		System.out.println("**************Inorder Travesal ****");
+		inorderRec(root);
+		System.out.println("");
+		
+	}
+	private void inorderRec(Node root) {
+		if(root!= null)
+		{
+		inorderRec(root.left);
+		System.out.print(root.data+" ");
+		inorderRec(root.right);
+		}
+	}
 	
+	private void preOrder() {
+		System.out.println("**************Preorder Travesal ****");
+		preOrderRec(root);
+		System.out.println("");
+	}
+	private void preOrderRec(Node root) {
+		if(root!=null) {
+		System.out.print(root.data+" ");
+		preOrderRec(root.left);
+		preOrderRec(root.right);
+		}
+	}
+	private void postOrder() {
+		System.out.println("**************Postorder Travesal ****");
+		postOrderRec(root);
+		System.out.println("");
+	}
+
+	private void postOrderRec(Node root) {
+		if(root!=null) {
+			postOrderRec(root.left);
+			postOrderRec(root.right);
+			System.out.print(root.data+" ");
+
+		}
+	}
 	
 
 }
