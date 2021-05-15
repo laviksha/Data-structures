@@ -1,6 +1,15 @@
 package Tree;
 
 public class TreeTraversal {
+	/*inorder --> LRootR
+preOrder -> RootLR
+postOrder -> LRRoot
+ /* Let us create following BST
+        50
+     /     \
+    30      70
+   /  \    /  \
+ 20   40  60   80 */*/
 	static class  Node{
 		int data;
 		Node left,right;
