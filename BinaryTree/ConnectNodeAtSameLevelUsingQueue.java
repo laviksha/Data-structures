@@ -1,7 +1,7 @@
- public void connect(Node root)
+ public void connect(Node root1)
     {
        Queue<Node> q=new LinkedList<Node>();
-       q.add(root);
+       q.add(root1);
        root.nextRight=null;
        while(!q.isEmpty()){
            int curSize=q.size();
