@@ -1,7 +1,7 @@
 boolean isIdentical(Node A, Node B)
 	{
         if(A==null && B==null) return true;
-        if((A==null && B!=null) || (A!=null && B==null)){
+        if((A==null || B==null)){
             return false;
         }
         
