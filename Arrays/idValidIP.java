@@ -1,4 +1,6 @@
- public boolean isValid(String s) {
+//test case 0.0.0.0 --> true  00.00.00.00 invalid, 0.0.0.0.  -> invalid(extra dot)  
+
+public boolean isValid(String s) {
         // Write your code here
         String[] splitted=s.split("\\.");
               //      System.out.println(splitted);
