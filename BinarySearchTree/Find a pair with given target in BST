@@ -1,0 +1,48 @@
+/*14 5 15 3 11 N N 2 4 10 13
+7 
+Input:
+        2
+      /   \
+     1     3
+sum = 5
+Output: 1 
+Explanation: 
+Nodes with value 2 and 3 sum up to 5.
+Example 2:
+
+Input:
+           6
+          /    
+         5     
+        /
+       3 
+     /  \
+    1    4
+sum = 2
+Output: 0 
+Explanation: 
+There's no pair that sums up to 2.
+
+
+
+*/
+ 
+ public int isPairPresent(Node root, int target)
+    {
+        // Write your code here
+        HashSet<Integer> hs=new HashSet<Integer>();
+         if(xx(root,target,hs)) return 1;
+         return 0;
+    }
+    public boolean xx(Node root,int target, HashSet<Integer> hs){
+        if(root==null) return false;
+       if(root.data>target){
+           return xx(root.left,target,hs);
+       }
+        int cur=target-root.data;
+        if(cur<0) return false;
+        if(hs.contains(root.data)) return true;
+        hs.add(cur);
+        return (xx(root.left,target,hs) || xx(root.right,target,hs));
+        
+    }
